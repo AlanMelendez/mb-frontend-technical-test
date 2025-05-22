@@ -5,6 +5,7 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
 import { CategoriesHorizontalListComponent } from "../../shared/components/categories-horizontal-list/categories-horizontal-list.component";
 import { StoresHorizontalListComponent } from "../../shared/components/stores-horizontal-list/stores-horizontal-list.component";
 import { StoreCardComponent } from "../../shared/components/store-card/store-card.component";
+import { CarritoComprasComponent } from "../../shared/components/carrito-compras/carrito-compras.component";
 interface Product {
   sku: string;
   title: string;
@@ -15,7 +16,7 @@ interface Product {
 }
 @Component({
   selector: 'app-dashboard',
-  imports: [ProductsHorizontalListComponent, HeaderComponent, FooterComponent, CategoriesHorizontalListComponent, StoresHorizontalListComponent, StoreCardComponent],
+  imports: [ProductsHorizontalListComponent, HeaderComponent, FooterComponent, CategoriesHorizontalListComponent, StoresHorizontalListComponent, StoreCardComponent, CarritoComprasComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
