@@ -1,28 +1,43 @@
-<app-header/>
+<app-header />
 <app-categories-horizontal-list
-    [listadoCategorias]="categorias"
-    [titulo]="'Categorías'"
-    [numeroElementos]="5"
-   />
+  [listadoCategorias]="categorias"
+  [titulo]="'Categorías'"
+  [numeroElementos]="5"
+/>
 <app-products-horizontal-list
-    [listadoProductos]="products"
-    [titulo]="'Ofertas'"
-    [mostrar]="true"
-    [numeroElementos]="5"
-   />
+  [listadoProductos]="products"
+  [titulo]="'Ofertas'"
+  [mostrar]="true"
+  [numeroElementos]="5"
+/>
+
+<app-stores-horizontal-list
+  [listadoTiendas]="tiendas"
+  [titulo]="'Tiendas oficiales'"
+/> 
+<!-- <div class="grid grid-cols-5 gap-6">
+  <app-store-card
+    [store]="tiendas[0]"
+    [span]="5"
+  ></app-store-card>
+</div> -->
+<!-- <section class="max-w-7xl mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 gap-6">
+    <app-store-card
+      [store]="tiendas[0]"
+      [span]="5"
+    ></app-store-card>
+  </div>
+</section> -->
 
 
 
 
+<app-products-horizontal-list
+  [listadoProductos]="products"
+  [titulo]="'Basados en tu ultima visita'"
+  [mostrar]="true"
+  [numeroElementos]="5"
+/>
 
-
-   <app-products-horizontal-list
-    [listadoProductos]="products"
-    [titulo]="'Basados en tu ultima visita'"
-    [mostrar]="true"
-    [numeroElementos]="5"
-   />
-
-   <app-footer/>
-
-
+<app-footer />

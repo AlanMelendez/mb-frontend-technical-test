@@ -3,6 +3,8 @@ import { ProductsHorizontalListComponent } from "../../shared/components/product
 import { HeaderComponent } from "../../shared/components/header/header.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { CategoriesHorizontalListComponent } from "../../shared/components/categories-horizontal-list/categories-horizontal-list.component";
+import { StoresHorizontalListComponent } from "../../shared/components/stores-horizontal-list/stores-horizontal-list.component";
+import { StoreCardComponent } from "../../shared/components/store-card/store-card.component";
 interface Product {
   sku: string;
   title: string;
@@ -13,7 +15,7 @@ interface Product {
 }
 @Component({
   selector: 'app-dashboard',
-  imports: [ProductsHorizontalListComponent, HeaderComponent, FooterComponent, CategoriesHorizontalListComponent],
+  imports: [ProductsHorizontalListComponent, HeaderComponent, FooterComponent, CategoriesHorizontalListComponent, StoresHorizontalListComponent, StoreCardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -70,5 +72,18 @@ export class DashboardComponent {
   { name: 'Asientos', imageUrl: '/assets/products/rectangle.png', link: '/categorias/asientos' },
 
 ]
+
+  tiendas: any[] = [
+    { name: 'Tienda 1', logoUrl: '/assets/products/rectangle.png', link: '/tienda/1' },
+    { name: 'Tienda 2', logoUrl: '/assets/products/rectangle.png', link: '/tienda/2' },
+    { name: 'Tienda 3', logoUrl: '/assets/products/rectangle.png', link: '/tienda/3' },
+    { name: 'Tienda 4', logoUrl: '/assets/products/rectangle.png', link: '/tienda/4' },
+    { name: 'Tienda 5', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' },
+    { name: 'Tienda 6', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' },
+
+  ];
+
+  tienda =     { name: 'Tienda 5', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' };
+
 
 }
