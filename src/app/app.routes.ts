@@ -21,6 +21,10 @@ export const routes: Routes = [
         loadComponent: () => import('./shared/components/products-horizontal-list/products-horizontal-list.component').then(m => m.ProductsHorizontalListComponent),
     },
     {
+        'path': 'dashboard',
+        loadComponent: () => import('./presentation/dashboard/dashboard.component').then(m => m.DashboardComponent),
+    },
+    {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'

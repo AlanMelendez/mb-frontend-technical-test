@@ -1,13 +1,5 @@
-import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  Input,
-  input,
-  signal,
-} from '@angular/core';
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ProductsHorizontalListComponent } from "../../shared/components/products-horizontal-list/products-horizontal-list.component";
 interface Product {
   sku: string;
   title: string;
@@ -17,26 +9,13 @@ interface Product {
   price: number;
 }
 @Component({
-  selector: 'app-products-horizontal-list',
-  imports: [CommonModule],
-  templateUrl: './products-horizontal-list.component.html',
-  styleUrl: './products-horizontal-list.component.css',
+  selector: 'app-dashboard',
+  imports: [ProductsHorizontalListComponent],
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductsHorizontalListComponent {
-  // Signal-based inputs :contentReference[oaicite:0]{index=0}
-  readonly titulo = input<string>('Titulo');
-  readonly mostrar = input<boolean>(); 
-  readonly numeroElementos = input<number>(); 
-  readonly listadoProductos = input<Product[]>();
-
-  readonly productosAMostrar = computed(
-    () => {
-   
-        return this.listadoProductos()!.slice(0, this.numeroElementos());
-      
-    }
-  );
+export class DashboardComponent { 
   products: Product[] = [
     {
       sku: 'DCAT019939',
