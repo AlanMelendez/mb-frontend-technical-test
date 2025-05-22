@@ -3,8 +3,7 @@
   <div class="flex justify-between items-center mb-6">
     <h2 class="text-xl font-semibold text-gray-900">{{ titulo() }}</h2>
     <a
-      *ngIf="mostrar() && listadoProductos()!.length > numeroElementos()!"
-      href="#"
+      *ngIf="mostrar() && listadoProductos()!.length >0!"
       class="text-sm text-gray-700 flex items-center hover:underline"
     >
       Ver todas
@@ -21,7 +20,7 @@
    
       <ng-content select="[extra]" class="col-span-full!"></ng-content>
 
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col">
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col transition-transform transform hover:scale-105 cursor-pointer hover:shadow-lg">
         <div class="flex justify-between items-start">
           <span class="text-xs text-gray-500">SKU: {{ product.sku }}</span>
           <button type="button">

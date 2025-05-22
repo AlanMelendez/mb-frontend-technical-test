@@ -2,7 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ExternalAuthService } from '../../services/external-auth.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -17,7 +17,9 @@ export class LoginComponent {
   protected authService = inject(ExternalAuthService);
   protected fb = inject(FormBuilder);
   readonly menuOpen = signal(false);
-  protected toast = inject(ToastrService);
+   toast = inject(ToastrService);
+   router = inject(Router);
+
 
   readonly loginForm: FormGroup = this.fb.group({
     username:     ['hector@mb.company', Validators.required],
@@ -39,6 +41,7 @@ export class LoginComponent {
     if (this.loginForm.invalid) return;
     const { username, password, remember } = this.loginForm.value;
 
+
     let data = {
        username,
        password,
@@ -47,21 +50,19 @@ export class LoginComponent {
     this.authService.login(data).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
-        this.toast.success('Login successful', 'Success', {
-          timeOut: 3000,
-          progressBar: true,
-          closeButton: true,
-        });
+        this.toast.success('Login successful', 'Success');
         // Handle successful login here, e.g., redirect to another page
-        // this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.error('Login failed:', error);
-        this.toast.error('Login failed', 'Error', {
-          timeOut: 3000,
+        this.toast.error('Login failed credentials infcorrect.', 'Error', {
+          timeOut: 4000,
           progressBar: true,
           closeButton: true,
         });
+            this.router.navigate(['/dashboard']);
+
       },
     });
 

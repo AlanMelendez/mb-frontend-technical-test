@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ProductsHorizontalListComponent } from "../../shared/components/products-horizontal-list/products-horizontal-list.component";
 import { HeaderComponent } from "../../shared/components/header/header.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
@@ -6,6 +6,8 @@ import { CategoriesHorizontalListComponent } from "../../shared/components/categ
 import { StoresHorizontalListComponent } from "../../shared/components/stores-horizontal-list/stores-horizontal-list.component";
 import { StoreCardComponent } from "../../shared/components/store-card/store-card.component";
 import { CarritoComprasComponent } from "../../shared/components/carrito-compras/carrito-compras.component";
+import { ApiTestService } from '../../core/services/api-test.service';
+import { forkJoin } from 'rxjs';
 interface Product {
   sku: string;
   title: string;
@@ -22,6 +24,30 @@ interface Product {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent { 
+
+  apiTestService = inject(ApiTestService);
+
+  ngOnInit(): void {
+    forkJoin({
+      categories: this.apiTestService.getSubsubcategorias(),
+      offerProducts: this.apiTestService.getProductosOfertas(),
+      lastVisitProducts: this.apiTestService.getProductosUltimaVisita(),
+    }).subscribe((data) => {
+      console.log(data);
+      this.categorias = data.categories;
+      this.productosOfertas = data.offerProducts;
+      this.ultimosProductos = data.lastVisitProducts;
+
+      console.log(this.categorias);
+      console.log(this.productosOfertas);
+      console.log(this.ultimosProductos);
+    });
+
+    
+  }
+
+  ultimosProductos : any[] =[];
+  productosOfertas: any[]  = [];
   products: Product[] = [
     {
       sku: 'DCAT019939',

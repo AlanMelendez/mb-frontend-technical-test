@@ -4,8 +4,8 @@
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
     <ng-container *ngFor="let cat of categoriasAMostrar()">
-      <div class="bg-white rounded-xl shadow p-4 flex flex-col">
-        <div class="w-full h-32 overflow-hidden rounded-lg">
+      <div class="bg-white rounded-xl shadow p-4 flex flex-col transition-transform transform hover:scale-105 cursor-pointer hover:shadow-lg">
+        <div class="w-full h-32 overflow-hidden rounded-lg ">
           <img
             [src]="cat.imageUrl"
             [alt]="cat.name"

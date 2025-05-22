@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input, computed } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-summary-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './summary-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

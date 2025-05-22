@@ -2,7 +2,7 @@
   <h2 class="text-xl font-semibold text-gray-900">Comprados juntos habitualmente</h2>
   <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-start">
     <ng-container *ngFor="let p of products(); let i = index">
-      <div class="flex h-full flex-col items-center bg-white rounded-xl shadow p-4 space-y-3">
+      <div class="flex h-full flex-col items-center bg-white rounded-xl shadow p-4 space-y-3 transition-transform transform hover:scale-105 cursor-pointer hover:shadow-lg">
         <div class="w-full flex justify-between items-center text-xs text-gray-500">
           <span>SKU: {{ p.sku }}</span>
           <div class="flex items-center space-x-2">
