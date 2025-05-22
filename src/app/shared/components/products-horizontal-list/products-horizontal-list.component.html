@@ -1,8 +1,9 @@
 <section class="max-w-7xl mx-auto px-4 py-8">
   <!-- Encabezado Ofertas -->
   <div class="flex justify-between items-center mb-6">
-    <h2 class="text-xl font-semibold text-gray-900">Ofertas</h2>
-    <a href="#" class="text-sm text-gray-700 flex items-center hover:underline">
+    <h2 class="text-xl font-semibold text-gray-900">{{titulo()}}</h2>
+   @if(mostrar()){
+     <a href="#" class="text-sm text-gray-700 flex items-center hover:underline">
       Ver todas
       <img
         src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/arrow-right.svg"
@@ -10,6 +11,7 @@
         class="h-4 w-4 ml-1"
       />
     </a>
+   }
   </div>
 
   <!-- Grid de Productos -->

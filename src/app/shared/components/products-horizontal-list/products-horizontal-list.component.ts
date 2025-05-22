@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 interface Product {
   sku: string;
@@ -17,6 +17,9 @@ interface Product {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductsHorizontalListComponent { 
+
+  titulo = input<string>('Ejemplo de Titulo');
+  mostrar = input<boolean>(true);
   products: Product[] = [
     {
       sku: 'DCAT019939',
