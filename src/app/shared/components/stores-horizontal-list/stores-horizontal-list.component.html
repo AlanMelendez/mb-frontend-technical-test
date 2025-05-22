@@ -14,13 +14,13 @@
     <ng-container *ngFor="let store of tiendasTop()">
       <a
         [href]="store.link"
-        class="bg-white rounded-xl shadow p-4 flex flex-col items-center"
+        class="bg-white rounded-xl shadow  flex flex-col items-center"
       >
-        <div class="w-full h-32 overflow-hidden rounded-lg">
+        <div class="w-full h-full overflow-hidden rounded-lg">
           <img
             [src]="store.logoUrl"
             [alt]="store.name"
-            class="w-full h-full object-contain"
+            class="w-full h-full object-cover"
           />
         </div>
       </a>
@@ -29,15 +29,14 @@
   <ng-container *ngIf="tiendaFeatured() as featured">
     <a
       [href]="featured.link"
-      class="bg-white rounded-xl shadow p-4 flex items-center h-32"
+      class="w-full bg-white rounded-xl shadow  flex items-center h-64"
     >
-      <div class="w-full h-full overflow-hidden rounded-lg">
-        <img
+     <img
           [src]="featured.logoUrl"
           [alt]="featured.name"
           class="w-full h-full object-contain"
         />
-      </div>
+    
       <!-- <span class="ml-6 text-lg font-semibold text-gray-900">
         {{ featured.name }}
       </span> -->

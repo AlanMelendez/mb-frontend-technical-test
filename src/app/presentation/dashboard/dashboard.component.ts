@@ -74,16 +74,12 @@ export class DashboardComponent {
 ]
 
   tiendas: any[] = [
-    { name: 'Tienda 1', logoUrl: '/assets/products/rectangle.png', link: '/tienda/1' },
-    { name: 'Tienda 2', logoUrl: '/assets/products/rectangle.png', link: '/tienda/2' },
-    { name: 'Tienda 3', logoUrl: '/assets/products/rectangle.png', link: '/tienda/3' },
-    { name: 'Tienda 4', logoUrl: '/assets/products/rectangle.png', link: '/tienda/4' },
-    { name: 'Tienda 5', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' },
-    { name: 'Tienda 6', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' },
-
-  ];
-
+    { name: 'Tienda 1', logoUrl: '/assets/stores/1.png', link: '/tienda/1' },
+    { name: 'Tienda 2', logoUrl: '/assets/stores/2.png', link: '/tienda/2' },
+    { name: 'Tienda 3', logoUrl: '/assets/stores/3.png', link: '/tienda/3' },
+    { name: 'Tienda 4', logoUrl: '/assets/stores/4.png', link: '/tienda/4' },
+    { name: 'Tienda 5', logoUrl: '/assets/stores/5.png', link: '/tienda/5' },
+    { name: 'Tienda 6', logoUrl: '/assets/stores/6.png', link: '/tienda/5' },
+  ]
   tienda =     { name: 'Tienda 5', logoUrl: '/assets/products/rectangle.png', link: '/tienda/5' };
-
-
 }
