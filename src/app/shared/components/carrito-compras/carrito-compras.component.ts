@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, Input, input, signal } fr
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
 import { HeaderComponent } from "../header/header.component";
+import { BoughtTogetherComponent } from "../bought-together/bought-together.component";
 
 export interface CartItem {
   sku: string;
@@ -17,7 +18,7 @@ export interface CartItem {
 @Component({
   selector: 'app-carrito-compras',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FooterComponent, HeaderComponent],
+  imports: [CommonModule, ReactiveFormsModule, FooterComponent, HeaderComponent, BoughtTogetherComponent],
   templateUrl: './carrito-compras.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -61,7 +62,6 @@ export class CarritoComprasComponent {
   }]
 );
 
-  /** Calcula subtotal y envío */
   readonly subtotal = computed(() =>
     this.items().reduce((sum, it) => sum + it.price * it.quantity, 0)
   );
