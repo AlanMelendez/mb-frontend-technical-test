@@ -12,31 +12,61 @@ mb-technical-test/
 ├── tsconfig.app.json
 ├── tsconfig.spec.json
 ├── public/
-│   └── favicon.ico
-└── src/
-    ├── index.html
-    ├── main.ts
-    ├── styles.scss
-    └── app/
-        ├── app.component.ts
-        ├── app.component.html
-        ├── app.component.scss
-        ├── app.routes.ts
-        ├── app.config.ts
-        ├── core/
-        │   ├── auth/
-        │   │   ├── auth.component.ts
-        │   │   ├── auth.routes.ts
-        │   │   ├── components/
-        │   │   │   ├── login/
-        │   │   │   ├── register/
-        │   │   ├── interfaces/
-        │   │   └── services/
-        │   ├── configs/
-        │   ├── guards/
-        │   ├── interceptors/
-        │   └── models/
-        └── ...
+│   ├── favicon.ico
+│   └── assets/
+├── src/
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.scss
+│   ├── app/
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.routes.ts
+│   │   ├── app.config.ts
+│   │   ├── core/
+│   │   │   ├── auth/
+│   │   │   │   ├── auth.component.ts
+│   │   │   │   ├── auth.routes.ts
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── login/
+│   │   │   │   │   ├── new-password/
+│   │   │   │   │   └── register/
+│   │   │   │   ├── interfaces/
+│   │   │   │   │   └── external/
+│   │   │   │   └── services/
+│   │   │   │       └── external-auth.service.ts
+│   │   │   ├── configs/
+│   │   │   │   ├── ngx-ui-loader.config.ts
+│   │   │   │   └── toastr.config.ts
+│   │   │   ├── guards/
+│   │   │   │   └── auth-external.guard.ts
+│   │   │   ├── interceptors/
+│   │   │   │   ├── auth-external.interceptor.spec.ts
+│   │   │   │   └── auth-external.interceptor.ts
+│   │   │   └── models/
+│   │   │       └── auth.model.ts
+│   │   ├── presentation/
+│   │   │   └── dashboard/
+│   │   │       ├── dashboard.component.css
+│   │   │       ├── dashboard.component.html
+│   │   │       └── dashboard.component.ts
+│   │   └── shared/
+│   │       ├── components/
+│   │       │   ├── bought-together/
+│   │       │   ├── carrito-compras/
+│   │       │   ├── categories-horizontal-list/
+│   │       │   ├── checkout-page/
+│   │       │   ├── footer/
+│   │       │   ├── header/
+│   │       │   ├── products-horizontal-list/
+│   │       │   ├── products-page/
+│   │       │   ├── store-card/
+│   │       │   ├── stores-horizontal-list/
+│   │       │   └── summary-card/
+│   └── environments/
+│       ├── environment.development.ts
+│       └── environment.ts
 ```
 
 ## 🚀 Instalación
