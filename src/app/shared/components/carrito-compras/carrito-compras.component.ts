@@ -27,7 +27,7 @@ export class CarritoComprasComponent {
   @Input() items = signal<CartItem[]>([
   {
     sku: 'VEMO12345',
-    imageUrl: '/assets/products/spark-plug-vemo.png',
+    imageUrl: '/assets/products/r2.png',
     title: 'VEMO Bujía de encendido Q+, calidad de primer equipo',
     quantity: 1,
     available: 10,
@@ -36,7 +36,7 @@ export class CarritoComprasComponent {
   },
   {
     sku: 'NGK67890',
-    imageUrl: '/assets/products/spark-plug-ngk.png',
+    imageUrl: '/assets/products/r3.png',
     title: 'NGK Iridium IX Bujía de alta performance',
     quantity: 2,
     available: 5,
@@ -45,7 +45,7 @@ export class CarritoComprasComponent {
   },
   {
     sku: 'BOSCH11223',
-    imageUrl: '/assets/products/spark-plug-bosch.png',
+    imageUrl: '/assets/products/r4.png',
     title: 'Bosch Super 4 Bujía doble electrodo',
     quantity: 1,
     available: 8,
@@ -54,7 +54,7 @@ export class CarritoComprasComponent {
   },
   {
     sku: 'DENSO44556',
-    imageUrl: '/assets/products/spark-plug-denso.png',
+    imageUrl: '/assets/products/r5.png',
     title: 'Denso Bujía Platinum TT',
     quantity: 3,
     available: 12,
