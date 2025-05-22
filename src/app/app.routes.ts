@@ -33,6 +33,10 @@ export const routes: Routes = [
         loadComponent: () => import('./shared/components/carrito-compras/carrito-compras.component').then(m => m.CarritoComprasComponent),
     },
     {
+        path: 'checkout',
+        loadComponent: () => import('./shared/components/checkout-page/checkout-page.component').then(m => m.CheckoutPageComponent),
+    },
+    {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'
