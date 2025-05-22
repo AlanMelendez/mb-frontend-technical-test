@@ -1,0 +1,99 @@
+<app-header/>
+
+<section class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+  <!-- Título -->
+  <h1 class="text-2xl font-semibold">Carrito de compra</h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <!-- Columna izquierda: lista y botón volver -->
+    <div class="lg:col-span-2 space-y-4">
+      <!-- Seguir comprando -->
+      <button class="w-full flex items-center space-x-2 bg-white rounded-xl shadow p-4">
+        <svg class="h-5 w-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="text-sm font-medium text-gray-800">Seguir comprando</span>
+      </button>
+
+      <!-- Items -->
+      <div class="space-y-4">
+        <ng-container *ngFor="let it of items()">
+          <div class="w-full bg-white rounded-xl shadow p-4 flex items-center justify-between">
+            <!-- Imagen y título -->
+            <div class="flex items-center space-x-4">
+              <img [src]="it.imageUrl" alt="{{it.title}}" class="h-16 w-16 object-contain rounded"/>
+              <div class="space-y-1">
+                <h2 class="text-sm font-medium text-gray-800">{{ it.title }}</h2>
+                <button class="text-xs text-red-500 hover:underline">Eliminar</button>
+              </div>
+            </div>
+
+            <!-- Cantidad -->
+            <div class="flex items-center space-x-2">
+              <button class="h-8 w-8 bg-gray-100 rounded text-gray-700">−</button>
+              <span class="w-6 text-center">{{ it.quantity }}</span>
+              <button class="h-8 w-8 bg-gray-100 rounded text-gray-700">+</button>
+            </div>
+
+            <!-- Disponibles -->
+            <div class="text-xs text-gray-500">Disponibles: {{ it.available }}</div>
+
+            <!-- Precio y envío -->
+            <div class="text-right space-y-1">
+              <div class="text-lg font-semibold text-gray-900">
+                ${{ it.price | number:'1.2-2' }} MXN
+              </div>
+              <div class="text-xs text-gray-500">
+                {{ it.shippingCost > 0
+                  ? 'Cargo por envío $' + (it.shippingCost | number:'1.0-0')
+                  : 'Sin cargo por envío' }}
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+        <app-summary-card
+        [itemCount]="items.length"
+        [subtotal]="2000"
+        [shipping]="3000"
+        buttonText="Pagar"
+        secureText="Compra 100% segura"
+    />
+
+    <!-- <aside class="space-y-4">
+      <div class="bg-white rounded-xl shadow p-6 space-y-4">
+        <h2 class="text-lg font-medium text-gray-800">Resumen de compra</h2>
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>Subtotal ({{ items().length }})</span>
+          <span>${{ subtotal() | number:'1.2-2' }} MXN</span>
+        </div>
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>Envío</span>
+          <span>${{ shipping() | number:'1.2-2' }} MXN</span>
+        </div>
+        <div class="flex justify-between text-lg font-semibold text-gray-900">
+          <span>TOTAL</span>
+          <span>${{ total() | number:'1.2-2' }} MXN</span>
+        </div>
+        <button class="w-full py-3 bg-black text-white rounded-lg hover:brightness-110 transition">
+          Pagar
+        </button>
+      </div>
+
+      <div class="w-full bg-[#D8FF00] rounded-xl shadow p-4 flex items-center justify-center">
+        <svg class="h-6 w-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 13l4 4L19 7" />
+        </svg>
+        <span class="text-sm font-medium text-black">Compra 100% segura</span>
+      </div>
+    </aside> -->
+  </div>
+</section>
+
+<app-bought-together/>
+
+<app-footer />

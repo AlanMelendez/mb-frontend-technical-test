@@ -1,0 +1,80 @@
+<header class="bg-[#D8FF00]">
+  <div class="w-full bg-[#D8FF00] pt-4">
+    <div class="max-w-7xl mx-auto flex items-center px-6 py-3">
+      <div class="w-[70%] flex items-center space-x-6">
+        <!-- Logo and search and button -->
+        <div class="flex-shrink-0 cursor-pointer" routerLink="/dashboard">
+          <img src="/assets/LOGO.png" alt="Logo" class="h-8 w-auto" />
+        </div>
+
+        <div class="flex-1">
+          <div class="relative">
+            <input
+              type="text"
+              placeholder="Buscar..."
+              class="w-full h-10 pl-10 pr-4 rounded-lg bg-white focus:outline-none"
+            />
+            <img
+              src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/magnifying-glass.svg"
+              alt="Search"
+              class="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500"
+            />
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="bg-white text-black px-4 py-2 rounded-lg shadow cursor-pointer" routerLink="/productses"
+        >
+          Registra tu auto
+        </button>
+      </div>
+
+      <div class="w-[30%] flex items-center justify-end space-x-4">
+        <!-- Notifications and cart buttons -->
+        <button class="relative">
+          <img
+            src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/bell.svg"
+            alt="Notifications"
+            class="h-6 w-6"
+          />
+          <span class="absolute top-0 right-0 h-2 w-2 bg-red-600 rounded-full"></span>
+        </button>
+
+        <button class="relative cursor-pointer" routerLink="/cart">
+          <img
+            src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/shopping-cart.svg"
+            alt="Cart"
+            class="h-6 w-6"
+          />
+          <span class="absolute top-0 right-0 h-2 w-2 bg-red-600 rounded-full"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="bg-[#D8FF00] p-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 m-">
+      <ul class="flex items-center space-x-8 text-sm ml-20">
+        <li class="flex items-center cursor-pointer">
+          <span>Categorías</span>
+          <img
+            src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/chevron-down.svg"
+            alt="Expandir"
+            class="h-4 w-4 ml-1"
+          />
+        </li>
+        <li><a href="#" class="hover:underline">Ofertas</a></li>
+        <li><a href="#" class="hover:underline">Tiendas oficiales</a></li>
+        <li><a href="#" class="hover:underline">Vender</a></li>
+        <li><a href="#" class="hover:underline">Marcas</a></li>
+      </ul>
+
+      <ul class="flex items-center space-x-8 text-sm">
+        <li>
+          <a href="/login" class="text-black font-medium">Ingresar</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

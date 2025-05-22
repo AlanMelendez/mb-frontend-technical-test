@@ -1,0 +1,123 @@
+<app-header/>
+
+<div class="w-full ">
+  <div class="max-w-3xl mx-auto  px-8 mt-12 pt-4 flex flex-col items-center">
+  <h1 class="text-2xl font-semibold mb-2 text-center">
+    Hola, te pedimos algunos datos para crear una cuenta de marca
+  </h1>
+  <div class="h-1 w-full bg-[#D8FF00] mb-6"></div>
+
+
+  <div class="w-full rounded-xl shadow-lg p-6">
+    <section class="mb-8">
+      <h2 class="text-xl font-medium mb-4">Información de la empresa</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+        <div>
+          <label class="block text-sm font-medium mb-1">Nombre Comercial</label>
+          <input
+            type="text"
+            placeholder="Nombre Comercial"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Teléfono de la empresa</label>
+          <input
+            type="tel"
+            placeholder="Teléfono"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">CSF</label>
+          <button
+            type="button"
+            class="w-full py-2 bg-[#D8FF00] text-black font-medium rounded-lg hover:brightness-110 transition"
+          >
+            Upload
+          </button>
+        </div>
+
+        <div class="md:col-span-3">
+          <label class="block text-sm font-medium mb-1">Identificación Oficial</label>
+          <button
+            type="button"
+            class="w-[35%] py-2 bg-[#D8FF00] text-black font-medium rounded-lg hover:brightness-110 transition"
+          >
+            Upload
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-xl font-medium mb-4">Dirección</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Calle</label>
+          <input
+            type="text"
+            placeholder="Calle"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Número exterior</label>
+          <input
+            type="text"
+            placeholder="Número exterior"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Número interior</label>
+          <input
+            type="text"
+            placeholder="Número interior"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Colonia</label>
+          <input
+            type="text"
+            placeholder="Colonia"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium mb-1">Código Postal</label>
+          <input
+            type="text"
+            placeholder="CP"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-400"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-8 space-y-4">
+      <label class="flex items-start space-x-2">
+        <input type="checkbox" class="mt-1 h-4 w-4 text-lime-400 focus:ring-lime-400 border-gray-300 rounded" />
+        <span class="text-sm text-gray-700">
+          Acepto los Términos y condiciones y autorizo el uso de mis datos de acuerdo a la Declaración de Privacidad.
+        </span>
+      </label>
+      <label class="flex items-center space-x-2">
+        <input type="checkbox" class="h-4 w-4 text-lime-400 focus:ring-lime-400 border-gray-300 rounded" />
+        <span class="text-sm text-gray-700">Acepto recibir información por correo</span>
+      </label>
+    </section>
+
+    <div class="text-center">
+      <button
+        type="submit"
+        class="px-8 py-3 bg-black text-white font-medium rounded-full hover:brightness-110 transition"
+      >
+        Crear
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>

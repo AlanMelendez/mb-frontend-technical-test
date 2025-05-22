@@ -1,0 +1,45 @@
+<aside class="space-y-4">
+  <!-- Resumen de compra -->
+  <div class="bg-white rounded-xl shadow p-6 space-y-4">
+    <h2 class="text-lg font-medium text-gray-800">Resumen de compra</h2>
+
+    <div class="flex justify-between text-sm text-gray-600">
+      <span>Subtotal ({{ itemCount() }})</span>
+      <span>${{ subtotal() | number:'1.2-2' }} MXN</span>
+    </div>
+
+    <div class="flex justify-between text-sm text-gray-600">
+      <span>Envío</span>
+      <span>${{ shipping() | number:'1.2-2' }} MXN</span>
+    </div>
+
+    <div class="flex justify-between text-lg font-semibold text-gray-900">
+      <span>TOTAL</span>
+      <span>${{ total() | number:'1.2-2' }} MXN</span>
+    </div>
+
+    <button
+      class="w-full py-3 bg-black text-white rounded-lg hover:brightness-110 transition"
+    >
+      {{ buttonText() }}
+    </button>
+  </div>
+
+  <!-- Compra segura -->
+  <div class="w-full bg-[#D8FF00] rounded-xl shadow p-4 flex items-center justify-center">
+    <svg
+      class="h-6 w-6 text-white mr-2"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M5 13l4 4L19 7"
+      />
+    </svg>
+    <span class="text-sm font-medium text-black">{{ secureText() }}</span>
+  </div>
+</aside>

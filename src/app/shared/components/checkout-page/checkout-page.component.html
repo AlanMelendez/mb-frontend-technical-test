@@ -1,0 +1,108 @@
+<app-header/>
+
+<section class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+  <h1 class="text-2xl font-semibold">Termina tu compra</h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <form
+      [formGroup]="checkoutForm"
+      class="lg:col-span-2 bg-white rounded-xl shadow p-6 space-y-6"
+    >
+      <div class="space-y-4">
+        <h2 class="text-lg font-medium text-gray-800">Contacto</h2>
+        <input
+          formControlName="email"
+          type="email"
+          placeholder="Correo electrónico"
+          class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <input
+          formControlName="phone"
+          type="tel"
+          placeholder="Teléfono"
+          class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-lg font-medium text-gray-800">Datos para entrega</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            formControlName="firstName"
+            type="text"
+            placeholder="Nombre"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            formControlName="lastName"
+            type="text"
+            placeholder="Apellido"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <input
+            formControlName="street"
+            type="text"
+            placeholder="Calle"
+            class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            formControlName="extNumber"
+            type="text"
+            placeholder="Número exterior"
+            class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            formControlName="intNumber"
+            type="text"
+            placeholder="Número interior"
+            class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <input
+            formControlName="colony"
+            type="text"
+            placeholder="Colonia"
+            class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            formControlName="postalCode"
+            type="text"
+            placeholder="Código postal"
+            class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <input
+            formControlName="city"
+            type="text"
+            placeholder="Ciudad"
+            class="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+        <div>
+          <select
+            formControlName="state"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <option value="" disabled selected>Selecciona estado</option>
+            <option *ngFor="let s of ['CDMX','Jalisco','Nuevo León','Puebla']">
+              {{ s }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <app-summary-card
+      [itemCount]="itemCount()"
+      [subtotal]="subtotal()"
+      [shipping]="shipping()"
+      buttonText="Comprar"
+      secureText="Todas las transacciones son seguras y están encriptadas"
+    ></app-summary-card>
+  </div>
+</section>
+
+
+<app-footer/>

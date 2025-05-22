@@ -1,0 +1,17 @@
+
+
+  <a
+    [href]="store()!.link"
+    class="w-full bg-white rounded-xl shadow p-4 flex flex-col items-center"
+  >
+    <div class="w-full h-64 overflow-hidden rounded-lg">
+      <img
+        [src]="store()!.logoUrl"
+        [alt]="store()!.name"
+        class="w-full h-full object-contain"
+      />
+    </div>
+    <!-- <h3 class="mt-3 text-sm text-gray-700 flex-1 leading-snug text-center">
+      {{ store()!.name }}
+    </h3> -->
+  </a>
