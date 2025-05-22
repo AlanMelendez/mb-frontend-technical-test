@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProductsHorizontalListComponent } from "../../shared/components/products-horizontal-list/products-horizontal-list.component";
+import { HeaderComponent } from "../../shared/components/header/header.component";
+import { FooterComponent } from "../../shared/components/footer/footer.component";
+import { CategoriesHorizontalListComponent } from "../../shared/components/categories-horizontal-list/categories-horizontal-list.component";
 interface Product {
   sku: string;
   title: string;
@@ -10,7 +13,7 @@ interface Product {
 }
 @Component({
   selector: 'app-dashboard',
-  imports: [ProductsHorizontalListComponent],
+  imports: [ProductsHorizontalListComponent, HeaderComponent, FooterComponent, CategoriesHorizontalListComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -58,4 +61,14 @@ export class DashboardComponent {
       price: 1842,
     },
   ];
+
+  categorias: any[] = [
+  { name: 'Llantas', imageUrl: '/assets/products/rectangle.png', link: '/categorias/llantas' },
+  { name: 'Frenos', imageUrl: '/assets/products/rectangle.png', link: '/categorias/frenos' },
+  { name: 'Rines',  imageUrl: '/assets/products/rectangle.png',  link: '/categorias/rines' },
+  { name: 'Baterías', imageUrl: '/assets/products/rectangle.png', link: '/categorias/baterias' },
+  { name: 'Asientos', imageUrl: '/assets/products/rectangle.png', link: '/categorias/asientos' },
+
+]
+
 }

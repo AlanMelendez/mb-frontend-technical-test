@@ -1,3 +1,9 @@
+<app-header/>
+<app-categories-horizontal-list
+    [listadoCategorias]="categorias"
+    [titulo]="'Categorías'"
+    [numeroElementos]="5"
+   />
 <app-products-horizontal-list
     [listadoProductos]="products"
     [titulo]="'Ofertas'"
@@ -16,3 +22,7 @@
     [mostrar]="true"
     [numeroElementos]="5"
    />
+
+   <app-footer/>
+
+
