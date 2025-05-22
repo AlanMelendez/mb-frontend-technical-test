@@ -111,6 +111,28 @@ La aplicación está configurada para funcionar sin Zone.js:
 
 - Las rutas y servicios están definidos usando `provideRouter` y `provideHttpClient` para evitar la zona.
 
+## 🖼️ Screenshots
+
+A continuación, se presentan algunas capturas de pantalla de la aplicación:
+
+- **Pantalla de Búsqueda:**
+  ![Búsqueda](public/assets/screenshots/busqueda.png)
+
+- **Carrito de Compras:**
+  ![Carrito](public/assets/screenshots/cart.png)
+
+- **Página de Checkout:**
+  ![Checkout](public/assets/screenshots/checkout.png)
+
+- **Dashboard:**
+  ![Dashboard](public/assets/screenshots/dashboard.png)
+
+- **Pantalla de Login:**
+  ![Login](public/assets/screenshots/login.png)
+
+- **Pantalla de Registro:**
+  ![Registro](public/assets/screenshots/register.png)
+
 ## 📄 Licencia
 
 Este proyecto es una prueba técnica y no tiene licencia de uso.
