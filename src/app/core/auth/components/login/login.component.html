@@ -1,0 +1,129 @@
+<div class="relative z-10 flex justify-between items-center max-w-5xl mx-auto px-6 py-4">
+  <!-- Logo -->
+  <img src="/assets/LOGO.png" alt="App Logo" class="h-8 w-auto"/>
+
+  <!-- Hamburger (mobile only) -->
+  <button
+    type="button"
+    class="md:hidden p-2 focus:outline-none"
+    (click)="toggleMenu()"
+    aria-label="Toggle menu"
+  >
+    <svg *ngIf="!menuOpen()" xmlns="http://www.w3.org/2000/svg"
+         class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+    <svg *ngIf="menuOpen()" xmlns="http://www.w3.org/2000/svg"
+         class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+</div>
+<div class="relative z-10 flex items-center justify-center px-4 py-8">
+  <div class="w-full max-w-5xl bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+    <!-- Left Image -->
+    <div class="hidden md:block md:w-1/2">
+      <img
+        src="/assets/login-side.png"
+        alt="Login side"
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <!-- Right Form -->
+    <div class="w-full md:w-1/2 p-8 flex flex-col space-y-6">
+      <h2 class="text-2xl font-semibold text-gray-800">Inicia sesión</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-4 flex-grow">
+        <!-- Username -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email o usuario</label>
+          <input
+            formControlName="username"
+            type="text"
+            placeholder="Email o nombre de usuario"
+            class="mt-1 w-full px-4 py-2 border border- rounded-lg focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <div class="relative mt-1">
+            <input
+              formControlName="password"
+              [type]="hide() ? 'password' : 'text'"
+              placeholder="Contraseña"
+              class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500"
+            />
+            <button
+              type="button"
+              class="absolute inset-y-0 right-0 px-3 flex items-center"
+              (click)="toggleHide()"
+              aria-label="Toggle password visibility"
+            >
+              <!-- Eye / Eye-off icons -->
+            </button>
+          </div>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="flex items-center">
+          <input
+            id="remember"
+            type="checkbox"
+            formControlName="remember"
+            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          />
+          <label for="remember" class="ml-2 text-sm text-gray-600">Recuérdame</label>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="w-full py-3 bg-[#D8FF00] text-black font-bold rounded-lg hover:brightness-110 transition"
+        >
+          INICIAR SESIÓN
+        </button>
+      </form>
+
+      <!-- Links & Social Buttons -->
+      <div class="space-y-4 text-center text-sm">
+        <a href="#" class="text-indigo-600 hover:underline">¿Olvidaste tu contraseña?</a>
+        <div class="flex justify-center items-center space-x-2">
+          <span>¿No tienes cuenta?</span>
+          <a href="/register" class="px-3 py-1 bg-black text-white rounded-full text-xs">REGISTRARSE</a>
+        </div>
+        <p class="text-gray-500">Inicia sesión con tus redes</p>
+        <div class="grid grid-cols-3 gap-4 justify-items-center">
+          <!-- Google -->
+          <button aria-label="Google" class="w-[125px] p-2 border border- rounded-lg flex items-center justify-center">
+            <img
+              src="/assets/google.png"
+              alt="Google"
+              class="h-6 w-6"
+            />
+          </button>
+          <!-- Facebook -->
+          <button aria-label="Facebook" class="w-[125px] p-2 rounded-lg bg-[#1877F2] flex items-center justify-center" >
+            <img
+              src="/assets/fb.png"
+              alt="Facebook"
+              class="h-6 w-6"
+            />
+          </button>
+          <!-- Apple -->
+          <button aria-label="Apple" class="w-[125px] bg-black p-2  rounded-lg flex items-center justify-center">
+            <img
+              src="/assets/apple.png"
+              alt="Apple"
+              class="h-6 w-6"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
