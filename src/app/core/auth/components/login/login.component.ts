@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ExternalAuthService } from '../../services/external-auth.service';
 import { RouterLink } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +17,12 @@ export class LoginComponent {
   protected authService = inject(ExternalAuthService);
   protected fb = inject(FormBuilder);
   readonly menuOpen = signal(false);
+  protected toast = inject(ToastrService);
 
   readonly loginForm: FormGroup = this.fb.group({
-    username:     ['', Validators.required],
-    password:     ['', Validators.required],
-    remember:     [false],
+    username:     ['hector@mb.company', Validators.required],
+    password:     ['123', Validators.required],
+    remember:     [true],
   });
 
   constructor() {}
@@ -36,6 +38,32 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.invalid) return;
     const { username, password, remember } = this.loginForm.value;
+
+    let data = {
+       username,
+       password,
+    }
+
+    this.authService.login(data).subscribe({
+      next: (response) => {
+        console.log('Login successful:', response);
+        this.toast.success('Login successful', 'Success', {
+          timeOut: 3000,
+          progressBar: true,
+          closeButton: true,
+        });
+        // Handle successful login here, e.g., redirect to another page
+        // this.router.navigate(['/dashboard']);
+      },
+      error: (error) => {
+        console.error('Login failed:', error);
+        this.toast.error('Login failed', 'Error', {
+          timeOut: 3000,
+          progressBar: true,
+          closeButton: true,
+        });
+      },
+    });
 
   }
 }

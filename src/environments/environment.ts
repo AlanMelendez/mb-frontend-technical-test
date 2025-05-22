@@ -2,9 +2,9 @@ export const environment = {
 
   production: false,
   internalAuth: {
-    apiUrl: 'http://localhost:5285/api',
+    apiUrl: 'https://prueba.sandboxmb.com/api',
   },
   externalAuth: {
-    apiUrl: 'http://localhost:5285/api',
+    apiUrl: 'https://prueba.sandboxmb.com/api',
   },
 };

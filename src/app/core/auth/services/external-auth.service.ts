@@ -40,8 +40,7 @@ export class ExternalAuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  private apiUrl = `${environment.externalAuth.apiUrl}${'/User'}`; // Replace with your actual API URL
-  private apiUrlCaptcha = `${environment.externalAuth.apiUrl}${'/Captcha'}`; // Replace with your actual API URL
+  private apiUrl = `${environment.externalAuth.apiUrl}${'/auth/'}`; // Replace with your actual API URL
 
 
   private httpHeaders: HttpHeaders = new HttpHeaders({
@@ -63,24 +62,10 @@ export class ExternalAuthService {
     this.setupTokenValidation();
   }
 
-  checkCaptcha(token:string): Observable<CaptchaResponse>{
-    return this.http
-    .post<CaptchaResponse>(`${this.apiUrlCaptcha}/VerifyCaptcha`, {captchaToken: token}, {
-      headers: this.httpHeaders,
-    })
-    .pipe(
-      // map((response) => this.handleAuthResponse(response)), // Handle response here
-      catchError((error: any) => {
-        return throwError(
-          () => new Error(error.message || 'An error occurred during login.')
-        );
-      })
-    );
-  }
 
   login(data: ILoginAuth): Observable<ILoginResponse> {
     return this.http
-      .post<ILoginResponse>(`${this.apiUrl}/Login`, data, {
+      .post<ILoginResponse>(`${this.apiUrl}`, data, {
         headers: this.httpHeaders,
       })
       .pipe(

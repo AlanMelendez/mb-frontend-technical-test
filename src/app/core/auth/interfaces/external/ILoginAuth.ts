@@ -1,5 +1,4 @@
 export interface ILoginAuth {
-    email: string;
+    username: string;
     password: string;
-    token?:string;
 }
