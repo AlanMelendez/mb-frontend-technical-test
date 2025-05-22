@@ -29,12 +29,12 @@
   <ng-container *ngIf="tiendaFeatured() as featured">
     <a
       [href]="featured.link"
-      class="w-full bg-white rounded-xl shadow  flex items-center h-64"
+      class="w-full bg-white rounded-xl shadow flex items-center h-full"
     >
      <img
           [src]="featured.logoUrl"
           [alt]="featured.name"
-          class="w-full h-full object-contain"
+          class="w-full h-full object-contain h-64"
         />
     
       <!-- <span class="ml-6 text-lg font-semibold text-gray-900">
