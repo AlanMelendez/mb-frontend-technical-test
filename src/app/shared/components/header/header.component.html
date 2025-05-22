@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto flex items-center px-6 py-3">
       <div class="w-[70%] flex items-center space-x-6">
         <!-- Logo and search and button -->
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0 cursor-pointer" routerLink="/dashboard">
           <img src="/assets/LOGO.png" alt="Logo" class="h-8 w-auto" />
         </div>
 
@@ -24,7 +24,7 @@
 
         <button
           type="button"
-          class="bg-white text-black px-4 py-2 rounded-lg shadow"
+          class="bg-white text-black px-4 py-2 rounded-lg shadow cursor-pointer" routerLink="/productses"
         >
           Registra tu auto
         </button>
@@ -41,7 +41,7 @@
           <span class="absolute top-0 right-0 h-2 w-2 bg-red-600 rounded-full"></span>
         </button>
 
-        <button class="relative">
+        <button class="relative cursor-pointer" routerLink="/cart">
           <img
             src="https://cdn.jsdelivr.net/npm/heroicons@2.0.13/20/solid/shopping-cart.svg"
             alt="Cart"
