@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "../footer/footer.component";
 import { HeaderComponent } from "../header/header.component";
 import { BoughtTogetherComponent } from "../bought-together/bought-together.component";
+import { SummaryCardComponent } from "../summary-card/summary-card.component";
 
 export interface CartItem {
   sku: string;
@@ -18,7 +19,7 @@ export interface CartItem {
 @Component({
   selector: 'app-carrito-compras',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FooterComponent, HeaderComponent, BoughtTogetherComponent],
+  imports: [CommonModule, ReactiveFormsModule, FooterComponent, HeaderComponent, BoughtTogetherComponent, SummaryCardComponent],
   templateUrl: './carrito-compras.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
