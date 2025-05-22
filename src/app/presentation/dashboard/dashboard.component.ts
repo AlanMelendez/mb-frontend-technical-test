@@ -65,11 +65,11 @@ export class DashboardComponent {
   ];
 
   categorias: any[] = [
-  { name: 'Llantas', imageUrl: '/assets/products/rectangle.png', link: '/categorias/llantas' },
-  { name: 'Frenos', imageUrl: '/assets/products/rectangle.png', link: '/categorias/frenos' },
-  { name: 'Rines',  imageUrl: '/assets/products/rectangle.png',  link: '/categorias/rines' },
-  { name: 'Baterías', imageUrl: '/assets/products/rectangle.png', link: '/categorias/baterias' },
-  { name: 'Asientos', imageUrl: '/assets/products/rectangle.png', link: '/categorias/asientos' },
+  { name: 'Llantas', imageUrl: '/assets/categories/1.png', link: '/categorias/llantas' },
+  { name: 'Frenos', imageUrl: '/assets/categories/2.png', link: '/categorias/frenos' },
+  { name: 'Rines',  imageUrl: '/assets/categories/3.png',  link: '/categorias/rines' },
+  { name: 'Baterías', imageUrl: '/assets/categories/4.png', link: '/categorias/baterias' },
+  { name: 'Asientos', imageUrl: '/assets/categories/5.png', link: '/categorias/asientos' },
 
 ]
 
