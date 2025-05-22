@@ -18,6 +18,14 @@
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
     <ng-container *ngFor="let product of productosAMostrar()">
+
+      <!-- sI EL PRODUCTO ES ID 6, HACEMOS LA PROYECCION DE CONTENIDO: -->
+      
+
+
+
+      <ng-content select="[extra]" class="col-span-full!"></ng-content>
+
       <div class="bg-white rounded-xl shadow p-4 flex flex-col">
         <div class="flex justify-between items-start">
           <span class="text-xs text-gray-500">SKU: {{ product.sku }}</span>
@@ -68,6 +76,8 @@
           </div>
         </div>
       </div>
+
     </ng-container>
+
   </div>
 </section>

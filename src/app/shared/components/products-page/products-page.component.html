@@ -1,0 +1,218 @@
+<app-header/>
+<div class="max-w-7xl mx-auto px-4 py-8 flex space-x-6">
+   <header >
+      <h1 class="text-2xl font-semibold">{{ title() }}</h1>
+      <p class="text-gray-600">{{ totalCount() | number }} resultados</p>
+      <nav class="text-sm text-gray-500 mt-1">
+        <ng-container *ngFor="let crumb of breadcrumb(); let last = last">
+          <a href="#" class="hover:underline">{{ crumb }}</a>
+          <span *ngIf="!last"> › </span>
+        </ng-container>
+      </nav>
+    </header>
+</div>
+ 
+<div class="max-w-7xl mx-auto px-4 py-8 flex space-x-6">
+    
+
+
+<div class="w-64 space-y-4">
+  <div class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-center h-14">
+    <span class="text-sm font-medium text-gray-800">Llega mañana</span>
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input
+        type="checkbox"
+        class="sr-only peer"
+        [formControl]="entregaMananaControl('entregaManana')!"
+      />
+      <div
+        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-indigo-500 rounded-full peer-checked:bg-indigo-600 transition-colors"
+      ></div>
+      <div
+        class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow peer-checked:translate-x-full transition-transform"
+      ></div>
+    </label>
+  </div>
+
+  <div class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-center h-14">
+    <span class="text-sm font-medium text-gray-800">Envío gratis</span>
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input
+        type="checkbox"
+        class="sr-only peer"
+        [formControl]="entregaMananaControl('envioGratis')!"
+      />
+      <div
+        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-indigo-500 rounded-full peer-checked:bg-indigo-600 transition-colors"
+      ></div>
+      <div
+        class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow peer-checked:translate-x-full transition-transform"
+      ></div>
+    </label>
+  </div>
+
+  <div class="w-full bg-white rounded-xl shadow p-4 flex justify-between items-center h-14">
+    <span class="text-sm font-medium text-gray-800">Tiendas oficiales</span>
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input
+        type="checkbox"
+        class="sr-only peer"
+        [formControl]="entregaMananaControl('tiendasOficiales')!"
+      />
+      <div
+        class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-indigo-500 rounded-full peer-checked:bg-indigo-600 transition-colors"
+      ></div>
+      <div
+        class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow peer-checked:translate-x-full transition-transform"
+      ></div>
+    </label>
+  </div>
+  <div class="w-full bg-white rounded-xl shadow overflow-hidden">
+    <button
+      type="button"
+      class="w-full p-4 flex justify-between items-center h-14"
+      (click)="filtersForm.patchValue({ marcasOpen: !filtersForm.value.marcasOpen })"
+    >
+      <span class="text-sm font-medium text-gray-800">Marcas</span>
+      <svg
+        [class.rotate-180]="filtersForm.value.marcasOpen"
+        class="h-5 w-5 text-gray-500 transition-transform"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div *ngIf="filtersForm.value.marcasOpen" class="px-4 py-3 space-y-2">
+      <label class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">Autolite</span>
+        <input
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          [formControl]="entregaMananaControl('marcas.Autolite')"
+        />
+      </label>
+      <label class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">Bosch</span>
+        <input
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          [formControl]="entregaMananaControl('marcas.Bosch')!"
+        />
+      </label>
+      <label class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">Champion</span>
+        <input
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          [formControl]="entregaMananaControl('marcas.Champion')!"
+        />
+      </label>
+      <label class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">Denso</span>
+        <input
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          [formControl]="entregaMananaControl('marcas.Denso')!"
+        />
+      </label>
+      <label class="flex items-center justify-between">
+        <span class="text-sm text-gray-700">NGK</span>
+        <input
+          type="checkbox"
+          class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          [formControl]="entregaMananaControl('marcas.NGK')!"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+<div class="flex-1 space-y-6">
+
+
+    <div class="w-full bg-white rounded-xl shadow p-4 flex items-center justify-between h-14">
+        <div class="flex items-center space-x-2">
+            <span class="text-sm font-medium text-gray-800">Ordenar por:</span>
+            <div class="relative">
+            <select
+                [formControl]="sortControl"
+                class="appearance-none text-sm pl-3 pr-8 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+                <option *ngFor="let opt of sortOptions" [value]="opt.value">
+                {{ opt.label }}
+                </option>
+            </select>
+            <svg
+                class="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+            </svg>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button
+            (click)="isGridView.set(true)"
+            [class.text-indigo-600]="isGridView()"
+            class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200"
+            aria-label="Grid view"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 5h3v3H4V5zM4 11h3v3H4v-3zM7 5h3v3H7V5zM7 11h3v3H7v-3zM10 5h3v3h-3V5zM10 11h3v3h-3v-3zM13 5h3v3h-3V5zM13 11h3v3h-3v-3z" />
+            </svg>
+            </button>
+            <button
+            (click)="isGridView.set(false)"
+            [class.text-indigo-600]="!isGridView()"
+            class="p-2 bg-gray-100 rounded-lg hover:bg-gray-200"
+            aria-label="List view"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 5h12v2H4V5zM4 9h12v2H4V9zM4 13h12v2H4v-2z" />
+            </svg>
+            </button>
+        </div>
+        </div>
+
+
+    <div >
+      <app-products-horizontal-list
+        [listadoProductos]="productosAMostrar()"
+        [titulo]="''"
+        [mostrar]="false"
+        [numeroElementos]="5"
+      />
+            <app-products-horizontal-list
+        [listadoProductos]="productosAMostrar()"
+        [titulo]="''"
+        [mostrar]="false"
+        [numeroElementos]="6"
+      >
+        <div extra class="w-full h-full bg-white rounded-xl shadow col-span-4">
+            <img
+            src="/assets/stores/6.png"
+            alt="Tienda 6"
+            class="w-full h-full object-cover"
+            />
+        </div>
+    
+        </app-products-horizontal-list>
+ 
+
+
+        <app-products-horizontal-list
+        [listadoProductos]="productosAMostrar()"
+        [titulo]="''"
+        [mostrar]="false"
+        [numeroElementos]="5"/>
+    </div>
+  </div>
+</div>
+
+
+<app-footer/>
