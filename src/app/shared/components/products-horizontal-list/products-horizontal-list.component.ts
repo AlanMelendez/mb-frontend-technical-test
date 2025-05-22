@@ -20,6 +20,9 @@ export class ProductsHorizontalListComponent {
 
   titulo = input<string>('Ejemplo de Titulo');
   mostrar = input<boolean>(true);
+  numeroElementos = input<number>(5);
+  listadoProductos = input<Product[]>([]);
+  
   products: Product[] = [
     {
       sku: 'DCAT019939',
