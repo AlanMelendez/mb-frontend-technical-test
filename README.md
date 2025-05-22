@@ -1,60 +1,86 @@
-# MbTechnicalTest
+# MB Technical Test
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+Este repositorio contiene una aplicación frontend desarrollada en Angular sin Zone.js (zoneless) como parte de una prueba técnica.
 
-## Development server
+## 📁 Estructura del Proyecto
 
-To start a local development server, run:
-
-```bash
-ng serve
+```plaintext
+mb-technical-test/
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.spec.json
+├── public/
+│   └── favicon.ico
+└── src/
+    ├── index.html
+    ├── main.ts
+    ├── styles.scss
+    └── app/
+        ├── app.component.ts
+        ├── app.component.html
+        ├── app.component.scss
+        ├── app.routes.ts
+        ├── app.config.ts
+        ├── core/
+        │   ├── auth/
+        │   │   ├── auth.component.ts
+        │   │   ├── auth.routes.ts
+        │   │   ├── components/
+        │   │   │   ├── login/
+        │   │   │   ├── register/
+        │   │   ├── interfaces/
+        │   │   └── services/
+        │   ├── configs/
+        │   ├── guards/
+        │   ├── interceptors/
+        │   └── models/
+        └── ...
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Instalación
 
-## Code scaffolding
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/usuario/mb-technical-test.git
+   cd mb-technical-test
+   ```
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🔧 Ejecución
 
-```bash
-ng generate component component-name
-```
+- Levantar servidor de desarrollo:
+  ```bash
+  npm start
+  ```
+- Ejecutar tests:
+  ```bash
+  npm test
+  ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ⚙️ Configuración Zoneless
 
-```bash
-ng generate --help
-```
+La aplicación está configurada para funcionar sin Zone.js:
 
-## Building
+- Se eliminó la dependencia de `zone.js` en el `polyfills.ts`.
+- Se usan APIs de bootstrap de Angular independiente de zonas:
+  ```ts
+  import { bootstrapApplication } from '@angular/platform-browser';
+  import { AppComponent } from './app/app.component';
 
-To build the project run:
+  bootstrapApplication(AppComponent, {
+    providers: [
+      // Proveedores necesarios...
+    ]
+  });
+  ```
 
-```bash
-ng build
-```
+- Las rutas y servicios están definidos usando `provideRouter` y `provideHttpClient` para evitar la zona.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📄 Licencia
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# mb-frontend-technical-test
+Este proyecto es una prueba técnica y no tiene licencia de uso.
