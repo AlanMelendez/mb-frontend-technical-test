@@ -17,6 +17,10 @@ export const routes: Routes = [
         loadComponent: () => import('./core/auth/components/register/register.component').then(m => m.RegisterComponent),
     },
     {
+        path: 'products',
+        loadComponent: () => import('./shared/components/products-horizontal-list/products-horizontal-list.component').then(m => m.ProductsHorizontalListComponent),
+    },
+    {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full'
